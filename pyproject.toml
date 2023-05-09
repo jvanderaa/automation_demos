@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "automationday-demos"
+version = "0.1.0"
+description = ""
+authors = ["Josh VanDeraa <jv@networktocode.com>"]
+readme = "README.md"
+packages = [{include = "automationday_demos"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ansible = "6.7.0"
+pynautobot = "^1.4.0"
+netutils = "^1.4.1"
+nornir = "^3.3.0"
+nornir-utils = "^0.2.0"
+nornir-nautobot = "^2.3.0"
+urllib3 = "1.26.6"
+
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

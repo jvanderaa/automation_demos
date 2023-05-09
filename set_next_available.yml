@@ -1,0 +1,56 @@
+---
+- name: "GET AND USE NEXT AVAILALBE ADDRESS"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    nautobot_url: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_URL')}}"
+    nautobot_token: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_TOKEN')}}"
+    graphql_query: |
+      {
+        prefixes(tag: "vm-addresses") {
+          prefix
+          id
+        }
+      }
+  tasks:
+    - name: "100: GET PREFIXES AVAILABLE"
+      networktocode.nautobot.query_graphql:
+        url: "{{ nautobot_url }}"
+        token: "{{ nautobot_token }}"
+        query: "{{ graphql_query }}"
+      register: query_response
+
+    - name: "200: SET FACT FOR PREFIX TO USE"
+      ansible.builtin.set_fact:
+        vm_prefix_id: "{{ query_response['data']['prefixes'][0]['id'] }}"
+
+    - name: "300: GET NEXT AVAILABLE IP ADDRESS"
+      ansible.builtin.uri:
+        url: "{{ nautobot_url }}/api/ipam/prefixes/{{ vm_prefix_id }}/available-ips/?limit=1"
+        method: GET
+        headers:
+          Content-Type: application/json
+          Authorization: "Token {{ nautobot_token  }}"
+      register: next_available_ip
+
+    - name: "325: PRINT OUT NEXT AVAILABLE IP ADDRESS"
+      debug:
+        msg: "{{ next_available_ip['json'][0]['address'] }}"
+
+    - name: "350: PRINT THE PARENT PREFIX ID"
+      debug:
+        msg: "{{ query_response['data']['prefixes'][0]['id'] }}"
+
+    - name: "400: SET IP ADDRESS"
+      networktocode.nautobot.ip_address:
+        url: "{{ nautobot_url }}"
+        token: "{{ nautobot_token }}"
+        address: "{{ next_available_ip['json'][0]['address'] }}"
+        state: new
+        status: active
+      register: new_address
+
+    - name: "450: PRINT OUT THE DATA OBJECT FOR THE CREATION"
+      debug:
+        msg: "{{ new_address }}"

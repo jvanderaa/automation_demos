@@ -1,0 +1,27 @@
+---
+- name: "SET UP PARENT PREFIX"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    nautobot_url: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_URL')}}"
+    nautobot_token: "{{ lookup('ansible.builtin.env', 'NAUTOBOT_TOKEN')}}"
+  tasks:
+    - name: "100: CREATE A TAG FOR PARENT PREFIX OF VM ADDRESSING"
+      networktocode.nautobot.tag:
+        url: "{{ nautobot_url }}"
+        token: "{{ nautobot_token }}"
+        name: "VM Addresses"
+        description: "Addresses for VMs to live in"
+
+    - name: "100: SET UP PARENT PREFIX FOR ALL REMOTE SITES"
+      networktocode.nautobot.prefix:
+        url: "{{ nautobot_url }}"
+        token: "{{ nautobot_token }}"
+        prefix: "198.51.100.192/26"
+        status: Active
+        description: VM Addresses
+        family: 4
+        state: present
+        tags:
+          - VM Addresses

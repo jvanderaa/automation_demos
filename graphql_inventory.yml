@@ -1,0 +1,16 @@
+---
+# Demo of GraphQL Inventory
+plugin: networktocode.nautobot.gql_inventory
+api_endpoint: https://automationday.josh-v.com
+query:
+  devices:
+    filters:
+      tag: demo-golden-config
+    site: name
+    tags: name
+    device_role: name
+    device_type: model
+group_by:
+  - site.name
+  - device_role.name
+  - device_type.model
