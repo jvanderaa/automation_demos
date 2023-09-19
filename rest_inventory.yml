@@ -1,10 +1,10 @@
 ---
 plugin: networktocode.nautobot.inventory
-api_endpoint: https://automationday.josh-v.com
+api_endpoint: https://demo.nautobot.com
 validate_certs: True
 config_context: true
 device_query_filters:
-  - tag: "demo-golden-config"
+  - site: "ams01"
 group_names_raw: yes
 group_by:
   - sites

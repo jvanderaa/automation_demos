@@ -38,3 +38,133 @@ Traceback (most recent call last):
 bdb.BdbQuit
 
 2023-05-09 10:12:17,819 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {'nautobot': <pynautobot.core.api.Api object at 0x1042e7610>} on 3 hosts
+2023-09-18 13:14:43,355 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {'nautobot': <pynautobot.core.api.Api object at 0x122978910>} on 27 hosts
+2023-09-18 13:14:43,822 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-11': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:43,823 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-02': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,077 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-06': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,188 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-13': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,188 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-03': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,292 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-07': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,416 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-12': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,493 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-01': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,580 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-08': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,796 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-14': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:44,906 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-04': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:45,199 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-17': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:45,291 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-18': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:45,402 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-05': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:45,683 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-16': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:14:45,709 - nornir.core.task -    ERROR -      start() - Host 'ams01-pdu-15': task 'hello_world' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/joshv/Library/Caches/pypoetry/virtualenvs/automationday-demos-5VaEYt4g-py3.10/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/joshv/projects/automationday2023/nornir_example.py", line 39, in hello_world
+    result=f"{task.host.name} says hello world with IP: {graph_response['data']['devices'][0]['primary_ip4']['address']}",
+TypeError: 'NoneType' object is not subscriptable
+
+2023-09-18 13:16:23,577 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {'nautobot': <pynautobot.core.api.Api object at 0x10ad9c7c0>} on 11 hosts

@@ -42,7 +42,7 @@ def hello_world(task: Task, nautobot: pynautobot.api) -> Result:
 
 def main():
     """Nornir testing."""
-    site = ["site01", "site02"]
+    site = ["ams01"]
 
     my_nornir = InitNornir(
         inventory={
@@ -50,7 +50,7 @@ def main():
             "options": {
                 "nautobot_url": os.getenv("NAUTOBOT_URL"),
                 "nautobot_token": os.getenv("NAUTBOT_TOKEN"),
-                "filter_parameters": {"site": site},
+                "filter_parameters": {"site": site, "has_primary_ip": True},
                 "ssl_verify": True,
             },
         },
